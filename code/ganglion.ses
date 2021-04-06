@@ -1,0 +1,314 @@
+{load_file("nrngui.hoc")}
+objectvar save_window_, rvp_
+objectvar scene_vector_[3]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+{pwman_place(0,0,0)}
+
+//Begin CellBuild[0]
+{
+load_file("celbild.hoc", "CellBuild")
+}
+{ocbox_ = new CellBuild(1)}
+{object_push(ocbox_)}
+{
+version(5.7)
+continuous = 0
+}
+{object_push(topol)}
+{
+first = 0
+slist.remove_all()
+sname = "dend"
+objref tobj
+}
+{
+tobj = new CellBuildSection("soma",0, 0, tobj, 0) slist.append(tobj)
+  tobj.position(0,0,15,0) tobj.lx=7.5 tobj.ly=0 tobj.i3d=0
+tobj = new CellBuildSection("dend",0, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(15,0,18,0) tobj.lx=16.5 tobj.ly=0 tobj.i3d=0
+tobj = new CellBuildSection("dend",1, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(1)
+  tobj.position(18,0,30,-30) tobj.lx=24 tobj.ly=-15 tobj.i3d=0
+tobj = new CellBuildSection("dend",2, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(2)
+  tobj.position(30,-30,75,45) tobj.lx=52.5 tobj.ly=7.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",3, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(3)
+  tobj.position(75,45,76.5435,47.5725) tobj.lx=75.7717 tobj.ly=46.2862 tobj.i3d=0
+tobj = new CellBuildSection("dend",4, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(3)
+  tobj.position(75,45,120,60) tobj.lx=97.5 tobj.ly=52.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",5, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(5)
+  tobj.position(120,60,150,15) tobj.lx=135 tobj.ly=37.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",6, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(6)
+  tobj.position(150,15,105,-75) tobj.lx=127.5 tobj.ly=-30 tobj.i3d=0
+tobj = new CellBuildSection("dend",7, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(7)
+  tobj.position(105,-75,120,-90) tobj.lx=112.5 tobj.ly=-82.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",8, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(8)
+  tobj.position(120,-90,60,-150) tobj.lx=90 tobj.ly=-120 tobj.i3d=0
+tobj = new CellBuildSection("dend",9, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(2)
+  tobj.position(30,-30,15,-45) tobj.lx=22.5 tobj.ly=-37.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",10, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(2)
+  tobj.position(30,-30,45,-45) tobj.lx=37.5 tobj.ly=-37.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",11, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(2)
+  tobj.position(30,-30,60,-30) tobj.lx=45 tobj.ly=-30 tobj.i3d=0
+tobj = new CellBuildSection("dend",12, 0, tobj, 0) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(0,0,-30,-45) tobj.lx=-15 tobj.ly=-22.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",13, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(13)
+  tobj.position(-30,-45,0,-75) tobj.lx=-15 tobj.ly=-60 tobj.i3d=0
+tobj = new CellBuildSection("dend",14, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(14)
+  tobj.position(0,-75,0,-90) tobj.lx=0 tobj.ly=-82.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",15, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(15)
+  tobj.position(0,-90,30,-105) tobj.lx=15 tobj.ly=-97.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",16, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(15)
+  tobj.position(0,-90,0,-120) tobj.lx=0 tobj.ly=-105 tobj.i3d=0
+tobj = new CellBuildSection("dend",17, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(15)
+  tobj.position(0,-90,-30,-105) tobj.lx=-15 tobj.ly=-97.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",18, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(13)
+  tobj.position(-30,-45,-45,-90) tobj.lx=-37.5 tobj.ly=-67.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",19, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(19)
+  tobj.position(-45,-90,-75,-75) tobj.lx=-60 tobj.ly=-82.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",20, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(13)
+  tobj.position(-30,-45,-120,-15) tobj.lx=-75 tobj.ly=-30 tobj.i3d=0
+tobj = new CellBuildSection("dend",21, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(15,0,45,75) tobj.lx=30 tobj.ly=37.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",22, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(45,75,90,75) tobj.lx=67.5 tobj.ly=75 tobj.i3d=0
+tobj = new CellBuildSection("dend",23, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(45,75,-60,135) tobj.lx=-7.5 tobj.ly=105 tobj.i3d=0
+}
+{
+tobj = new CellBuildSection("dend",24, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(45,75,45,105) tobj.lx=45 tobj.ly=90 tobj.i3d=0
+tobj = new CellBuildSection("dend",25, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-75,90) tobj.lx=-67.5 tobj.ly=112.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",26, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-45,90) tobj.lx=-52.5 tobj.ly=112.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",27, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-30,150) tobj.lx=-45 tobj.ly=142.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",28, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-90,135) tobj.lx=-75 tobj.ly=135 tobj.i3d=0
+tobj = new CellBuildSection("dend",29, 0, tobj, 0) slist.append(tobj)
+tobj.parent=slist.object(0)
+  tobj.position(0,0,-90,45) tobj.lx=-45 tobj.ly=22.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",30, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-75,60) tobj.lx=-82.5 tobj.ly=52.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",31, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-45,45) tobj.lx=-67.5 tobj.ly=45 tobj.i3d=0
+tobj = new CellBuildSection("dend",32, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-60,15) tobj.lx=-75 tobj.ly=30 tobj.i3d=0
+tobj = new CellBuildSection("dend",33, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-120,30) tobj.lx=-105 tobj.ly=37.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",34, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-105,75) tobj.lx=-97.5 tobj.ly=60 tobj.i3d=0
+tobj = new CellBuildSection("dend",35, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-90,75) tobj.lx=-90 tobj.ly=60 tobj.i3d=0
+tobj = new CellBuildSection("dend",36, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-120,45) tobj.lx=-105 tobj.ly=45 tobj.i3d=0
+tobj = new CellBuildSection("dend",37, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(30)
+  tobj.position(-90,45,-90,30) tobj.lx=-90 tobj.ly=37.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",38, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(21)
+  tobj.position(-120,-15,-105,15) tobj.lx=-112.5 tobj.ly=0 tobj.i3d=0
+tobj = new CellBuildSection("dend",39, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(21)
+  tobj.position(-120,-15,-75,0) tobj.lx=-97.5 tobj.ly=-7.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",40, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(21)
+  tobj.position(-120,-15,-120,-45) tobj.lx=-120 tobj.ly=-30 tobj.i3d=0
+tobj = new CellBuildSection("dend",41, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(21)
+  tobj.position(-120,-15,-135,-15) tobj.lx=-127.5 tobj.ly=-15 tobj.i3d=0
+tobj = new CellBuildSection("dend",42, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(21)
+  tobj.position(-120,-15,-150,15) tobj.lx=-135 tobj.ly=0 tobj.i3d=0
+tobj = new CellBuildSection("dend",43, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(21)
+  tobj.position(-120,-15,-150,-30) tobj.lx=-135 tobj.ly=-22.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",44, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(19)
+  tobj.position(-45,-90,-60,-120) tobj.lx=-52.5 tobj.ly=-105 tobj.i3d=0
+tobj = new CellBuildSection("dend",45, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(19)
+  tobj.position(-45,-90,-90,-105) tobj.lx=-67.5 tobj.ly=-97.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",46, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(19)
+  tobj.position(-45,-90,-45,-135) tobj.lx=-45 tobj.ly=-112.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",47, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-30,105) tobj.lx=-45 tobj.ly=120 tobj.i3d=0
+tobj = new CellBuildSection("dend",48, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-120,105) tobj.lx=-90 tobj.ly=120 tobj.i3d=0
+}
+{
+tobj = new CellBuildSection("dend",49, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-45,90) tobj.lx=-52.5 tobj.ly=112.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",50, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(24)
+  tobj.position(-60,135,-60,165) tobj.lx=-60 tobj.ly=150 tobj.i3d=0
+tobj = new CellBuildSection("dend",51, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(45,75,75,90) tobj.lx=60 tobj.ly=82.5 tobj.i3d=0
+tobj = new CellBuildSection("dend",52, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(45,75,15,75) tobj.lx=30 tobj.ly=75 tobj.i3d=0
+tobj = new CellBuildSection("dend",53, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(45,75,60,45) tobj.lx=52.5 tobj.ly=60 tobj.i3d=0
+tobj = new CellBuildSection("dend",54, 0, tobj, 1) slist.append(tobj)
+tobj.parent=slist.object(22)
+  tobj.position(45,75,0,60) tobj.lx=22.5 tobj.ly=67.5 tobj.i3d=0
+all_init()
+}
+for i=0, slist.count-1 {slist.object(i).rdses()}
+{object_pop()}
+{
+}
+{object_push(subsets)}
+{first = 0}
+{ tobj = snlist.object(0)}
+{consist()}
+{object_pop()}
+{
+}
+{object_push(geom)}
+{
+first = 0
+set_default()
+}
+{object_pop()}
+{
+}
+{object_push(memb)}
+{first=0}
+{object_pop()}
+{
+}
+{object_push(manage)}
+{
+first = 0
+classname = "Cell"
+etop=1 esub=1 egeom=1 emem=1
+itop=1 isub=0 igeom=0 imem=0
+bild.topol.names_off = 0
+bild.topol.circles_off = 0
+output_index = 0  output_x = 1
+thresh = 10
+}
+{object_pop()}
+{
+cexport()
+}
+{object_pop()}
+{
+save_window_=ocbox_.gtopol
+save_window_.size(-200,200,-150,150)
+scene_vector_[2] = save_window_
+ocbox_.gtopol = save_window_
+save_window_.save_name("ocbox_.gtopol")
+}
+{
+ocbox_.map("CellBuild[0]", 625, 258, 709.2, 333.9)
+}
+objref ocbox_
+//End CellBuild[0]
+
+{
+xpanel("Temperature", 0)
+celsius = 25
+xvalue("celsius","celsius", 1,"", 0, 1 )
+xpanel(568,1177)
+}
+
+//Begin VariableTimeStep
+{
+ocbox_ = NumericalMethodPanel[0]
+}
+{object_push(ocbox_)}
+{
+atol_ = 0.001  CVode[0].atol(atol_)
+restore(1, 1)
+}
+{object_pop()}
+{
+ocbox_.map("VariableTimeStep", 284, 1177, 294.3, 160.2)
+}
+objref ocbox_
+//End VariableTimeStep
+
+{
+xpanel("RunControl", 0)
+v_init = -65
+xvalue("Init","v_init", 1,"stdinit()", 1, 1 )
+xbutton("Init & Run","run()")
+xbutton("Stop","stoprun=1")
+runStopAt = 5
+xvalue("Continue til","runStopAt", 1,"{continuerun(runStopAt) stoprun=1}", 1, 1 )
+runStopIn = 1
+xvalue("Continue for","runStopIn", 1,"{continuerun(t + runStopIn) stoprun=1}", 1, 1 )
+xbutton("Single Step","steprun()")
+t = 0
+xvalue("t","t", 2 )
+tstop = 5
+xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
+dt = 0.025
+xvalue("dt","dt", 1,"setdt()", 0, 1 )
+steps_per_ms = 40
+xvalue("Points plotted/ms","steps_per_ms", 1,"setdt()", 0, 1 )
+screen_update_invl = 0.05
+xvalue("Scrn update invl","screen_update_invl", 1,"", 0, 1 )
+realtime = 0
+xvalue("Real Time","realtime", 0,"", 0, 1 )
+xpanel(853,1177)
+}
+{
+xpanel("NEURON Demonstrations", 0)
+xvarlabel(demolabel)
+xradiobutton("Patch: HH","demo(1)")
+xradiobutton("Stylized","demo(2)")
+xradiobutton("Pyramidal","demo(3)")
+xradiobutton("Release","demo(4)")
+xradiobutton("Synchronizing net (artificial cells)","demo(5)")
+xradiobutton("LinearCircuit: Dynamic Clamp","demo(6)")
+xradiobutton("Stochastic Single Channels: HH","demo(7)")
+xradiobutton("No model","demo(0)")
+xpanel(0,1177)
+}
+objectvar scene_vector_[1]
+{doNotify()}

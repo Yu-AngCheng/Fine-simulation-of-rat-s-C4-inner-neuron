@@ -1,0 +1,18 @@
+# Standardization file for LY25-RGC10.swc created with StdSwc version 1.31 on 2/21/13.
+# Edited SWC file saved as LY25-RGC10.swc.CNG.swc.  See StdSwc1.31.doc for more information.
+#
+# code   irregularity_description. (action taken)
+#     irregularity_type     coordinates
+#
+4.4  Line 359 of rad 0.275 links to 358 of rad 0.09.  (no action taken)
+     B1      X, Y, Z:  7.59  18.7  4.01
+2.1  Line 1 has 8 daughters.  Type is 1.  (no action taken)
+     B1      X, Y, Z:  0.0  0.0  0.0
+ 
+ 
+
+
+Number of type A irregularities = 0
+Number of type B1 irregularities = 2
+Number of type B2 irregularities = 0
+Number of type C irregularities = 0
