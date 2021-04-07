@@ -12,8 +12,6 @@ import matplotlib.pyplot as plt
 # a helper library, included with NEURON
 h.load_file('stdlib.hoc')
 h.load_file('import3d.hoc')
-h.celsius = 25
-
 
 class Cell:
     def __init__(self, name=None, soma=None, apic=None, dend=None, axon=None):
@@ -142,7 +140,7 @@ def load(filename, fileformat=None, cell=None, use_axon=True, xshift=0, yshift=0
     cell.all = cell.soma + cell.apic + cell.dend + cell.axon
     return cell
 
-
+h.celsius = 25 # room temperature
 Ganglion = load("LY25-RGC10.CNG.swc", 'swc')
 
 Ganglion.soma[0].diam = 15
@@ -185,7 +183,7 @@ t.record(h._ref_t)
 stim_current = h.Vector()
 stim_current.record(IC._ref_i)
 
-# 作图
+# picture
 # threshold current
 IC.amp = 0.02  # nA
 h.v_init = -63 * mV  # initialization voltage
@@ -233,7 +231,7 @@ plt.xlim((0, h.tstop))
 # plt.title('amplitude = 150 pA')
 plt.show()
 
-# Responses to hyperpolarizing currents 超极化电流
+# Responses to hyperpolarizing currents
 # amplitude = -100pA
 IC.amp = -0.1
 h.v_init = -63 * mV  # initialization voltage
